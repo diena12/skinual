@@ -18,6 +18,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
+// 診断テストのjavascript //
 $(function() {
   load();
   $(window).on("load resize", function() {load();});
@@ -149,3 +150,48 @@ function load() {
   // 最大数を取得する「Math.max.apply(null,value)」について https://hajimete.org/jquery-get-the-maximum-and-minimum-values
   $(".questions").css({height: Math.max.apply(null,q_height)});
 }
+
+// レビューの新規投稿のjavescript //
+$(function(){
+  function appendOption(category){
+    var html = `<option value="${category.id}">${category.name}</option>`;
+    return html;
+  }
+  function appendChildrenBox(insertHTML){
+    var childSelectHtml = "";
+    childSelectHtml = `<div class="category__child" id="children_wrapper">
+                        <select id="child__category" name="post[category_id]" class="serect_field">
+                          <option value="">---</option>
+                          ${insertHTML}
+                        </select>
+                      </div>`;
+    $('.append__category').append(childSelectHtml);
+  }
+  
+  $('#item_category_id').on('change',function(){
+    var parentId = document.getElementById('item_category_id').value;
+    if (parentId != ""){
+      $.ajax({
+        url: '/reviews/get_category_children/',
+        type: 'GET',
+        data: { parent_id: parentId },
+        dataType: 'json'
+      })
+      .done(function(children){
+        $('#children_wrapper').remove();
+        var insertHTML = '';
+        children.forEach(function(child){
+          insertHTML += appendOption(child);
+        });
+        appendChildrenBox(insertHTML);
+        if (insertHTML == "") {
+          $('#children_wrapper').remove();
+        }
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
+    }else{
+      $('#children_wrapper').remove();
+    }});
+})
