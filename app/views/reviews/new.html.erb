@@ -1,0 +1,45 @@
+<div class="room_register-contents">
+  <div class="room-register">
+    <%= form_with model: @review do |f| %>
+      <div class="room-box">
+        <div class="room-detail">
+          <h3>おすすめ商品登録</h3>
+        </div>
+        <div class="append__category">
+          <div class="category">
+            <div class="form__label">
+              <div class="weight-bold-text lavel__name ">
+                カテゴリー
+              </div>
+              <div class="lavel__Required">
+                <%= f.collection_select :category_id, @category_parent, :id, :name,{ include_blank: "選択してください"},class:"serect_field", id:"item_category_id" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="room-detail mini">
+          <div class="room-icon"><%= f.label :image,"商品画像" %></div>
+          <%= f.file_field :image %>
+        </div>
+        <div class="room-detail">
+          <div class="room-icon"><%= f.label :name,"商品名"%></div>
+          <%= f.text_field :name,:placeholder => "商品名を入力してください" %>
+        </div>
+        <div class="room-detail">
+          <div class="room-icon"><%= f.label :description,"使用感"%></div>
+          <%= f.text_area :description,:placeholder => "例)使ってみての効果やおすすめの使い方・ポイントなど" %>
+        </div>
+        <div class="room-detail">
+          <div class="room-icon"><%= f.label :address,"テクスチャー" %></div>
+            <%= f.select :texture, {'しっとり': 'しっとり', 'さらさら': 'さらさら'} ,{ include_blank: "選択してください"},class:"serect_field", id:"item_category_id" %>
+        </div>
+        <div class="room-detail">
+          <div class="room-icon"><%= f.label :fee,"参考価格" %></div>
+          <%= f.text_field :price,:placeholder => "おおよその価格を入力してください" %>
+        </div>
+        <div class="room_register_action">
+          <%= f.submit "登録" %>
+        </div>
+    <% end %>
+  </div>
+</div>
