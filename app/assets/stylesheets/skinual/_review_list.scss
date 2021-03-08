@@ -1,0 +1,16 @@
+.mainContent{
+  margin-top: 30px;
+}
+
+.reviews{
+  display: flex;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 0 1.5px #999;
+
+  .review-image{
+    margin-right:20px
+  }
+}
