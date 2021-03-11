@@ -1,6 +1,49 @@
+//ドロップダウンメニューのCSS//
+.dropdwn{
+  max-width: 250px;
+
+  .user-name {
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+    margin-top:20px;
+    cursor:pointer;
+    position: relative;
+    list-style: none;
+    border-radius: 7px;
+    background-color: #a3a09f;
+    color:#fff
+  }
+
+  .dropdwn_menu{
+    width: 100%;
+    display: none;
+    position: absolute;
+    margin-left: -5px;
+    margin-top: 5px;
+    background-color: white;
+    z-index:99;
+
+    li{
+      list-style: none;
+      width: 100%;
+      margin-top: 5px;
+      padding:10px 20px;
+      font-size:12px;
+
+      a{
+        color: black;
+      }
+    }
+  }
+}
+
+
+
 a:hover{
   color:black;
 }
+//Sign UpボタンのCSS//
 .sign-button{
   margin:0 0 0 auto;
 }

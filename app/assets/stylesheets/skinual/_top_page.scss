@@ -1,0 +1,35 @@
+
+//スライダーの文字のCSS//
+.swiper-container{
+  h1{
+    position: absolute;
+    z-index: 99;
+    color: white;
+    text-shadow: 0px 3px 0px #b2a98f,0px 14px 10px rgba(0,0,0,0.15),0px 24px 2px rgba(0,0,0,0.1),0px 34px 30px rgba(0,0,0,0.1);
+    font-weight: bold;
+    top:50%;
+    left:130px;
+    font-size: 110px;
+    opacity:0.8;
+    font-family: 'Butler';
+  }
+}
+
+.swiper-wrapper{
+  position: relative;
+}
+
+//サイト説明//
+.site-description{
+  margin-top:50px;
+  font-family:'CJK';
+  .site-mind{
+    font-size:32px;
+    text-align: center;
+    
+  }
+  .site-introduction{
+    margin-top: 20px;
+    text-align: center;
+  }
+}
