@@ -1,0 +1,16 @@
+<section class="mainContent clearfix ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-xs-12 sideBar">
+        <%= render partial: "category", locals: {parents: @category_parent} %>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+        <div class="card bg-white border-none shadow-sm ">
+          <div class=" card-header font-weight-bold">みんなのおすすめ商品一覧</div>
+            <%= render partial: "/reviews/review_list", collection: @reviews, as: "review" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
