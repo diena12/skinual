@@ -19,9 +19,22 @@
   position: relative;
 }
 
+@media screen and (max-width: 670px) {
+  .swiper-container{
+    h1{
+      left:50px;
+      font-size: 32px;
+    }
+  }
+}
+
 //サイト説明//
+.top-main{
+  background-color: white;
+}
+
 .site-description{
-  margin-top:50px;
+  margin-top:100px;
   font-family:'CJK';
   .site-mind{
     font-size:32px;
@@ -31,5 +44,243 @@
   .site-introduction{
     margin-top: 20px;
     text-align: center;
+    margin-bottom:80px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .site-description{
+    .site-mind{
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+}
+//トップリスト//
+.top-list{
+  font-family:'CJK';
+  padding:50px 0 50px;
+  .list{
+    width: 100%;
+    display: flex;
+    margin:0 21px;
+    padding:0 70px;
+    list-style: none;
+  }
+
+  .item{
+    width:33.33%;
+    cursor: pointer;
+    .link{
+      display: block;
+      margin:0 21px;
+      color:black;
+    }
+
+    .card{
+      border-style: none;
+
+      .card-image img{
+        width:100%;
+        height:auto;
+        border-radius: 10px;
+      }
+
+      .card-title{
+        margin-top: 25px;
+        letter-spacing: 0.07em;
+        font-size: 22px;
+        line-height: 1.2;
+        color: #555;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .top-list{
+    padding-bottom: 55px;
+    .list{
+      display: block;
+      padding:0;
+    }
+    .item{
+      width:100%;
+    }
+    .card-text{
+      margin-bottom:20px;
+    }
+  }
+}
+//サイトのポイント//
+.site-point-section{
+  background-color: #f6f7fb;
+  .site-point-wrapper{
+    padding:200px 0 100px;
+  }
+}
+.site-points{
+  display: flex;
+  position: relative;
+  margin-bottom:80px;
+
+  .point-image{
+    position: absolute;
+    right:0;
+    img{
+      width:750px;
+      height:auto;
+      border-radius: 10px;
+    }
+  }
+
+  .point-detail{
+    width:45%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-top: 60px;
+    padding:100px 80px;
+
+    .point-detail-in{
+      margin-right:40px;
+    }
+    .title{
+      font-size: 32px;
+      line-height: 1.2;
+      color: #555;
+      letter-spacing: 0.12em;
+    }
+
+    .sub-title{
+      margin-top: 7px;
+      font-size: 24px;
+      color: #f7a3ba;
+      letter-spacing: 0.12em;
+    }
+
+    .description{
+      margin-top: 25px;
+      line-height: 1.95;
+      color: #666;
+      font-size: 18px;
+    }
+    .link-button{
+      margin-top: 60px;
+      cursor: pointer;
+      .link{
+        position: relative;
+        display: inline-block;
+        padding: 10px 15px;
+        width: 300px;
+        text-align: center;
+        height: 46px;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 23px;
+        background: -webkit-linear-gradient(175deg, #f2769c 0%, #f7a3ba 100%);
+        background: -o-linear-gradient(175deg, #f2769c 0%, #f7a3ba 100%);
+        background: linear-gradient(275deg, #f2769c 0%, #f7a3ba 100%);
+        -webkit-transition: .4s;
+        -o-transition: .4s;
+        transition: .4s;
+    }
+  }
+  }
+  .point-image2{
+    position: absolute;
+    left:0;
+    img{
+      width:750px;
+      height:auto;
+      border-radius: 10px;
+    }
+  }
+
+  .point-detail2{
+    width:45%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 700px;
+    margin-top: 60px;
+    padding:100px 80px;
+
+    .title{
+      font-size: 32px;
+      line-height: 1.2;
+      color: #555;
+      letter-spacing: 0.12em;
+    }
+
+    .sub-title{
+      margin-top: 7px;
+      font-size: 24px;
+      color: #f7a3ba;
+      letter-spacing: 0.12em;
+    }
+
+    .description{
+      margin-top: 25px;
+      line-height: 1.95;
+      color: #666;
+      font-size: 18px;
+    }
+    .link-button{
+      margin-top: 60px;
+      cursor: pointer;
+      .link{
+        position: relative;
+        display: inline-block;
+        padding: 10px 15px;
+        width: 300px;
+        text-align: center;
+        height: 46px;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 23px;
+        background: -webkit-linear-gradient(175deg, #f2769c 0%, #f7a3ba 100%);
+        background: -o-linear-gradient(175deg, #f2769c 0%, #f7a3ba 100%);
+        background: linear-gradient(275deg, #f2769c 0%, #f7a3ba 100%);
+        -webkit-transition: .4s;
+        -o-transition: .4s;
+        transition: .4s;
+      }
+    }  
+  }
+}
+@media screen and (max-width: 670px) {
+  .site-points{
+    display: block;
+
+    .point-image img{
+      width:100%;
+    }
+
+    .point-detail{
+      border-radius: 0 10px 10px 0;
+      width: auto;
+      margin: -180px 0 0 0;
+      padding: 350px 30px 50px 25px;
+
+      .title{
+        font-size:24px;
+        text-align: center;
+      }
+
+      .sub-title{
+        text-align: center;
+      }
+    }
+
+    .point-image2 img{
+      width:100%;
+    }
+  
+    .point-detail2{
+      border-radius: 10px 0 0 10px;
+      width: auto;
+      margin: -145px 0 0 20px;
+      padding: 330px 30px 50px 30px;
+    }
   }
 }
