@@ -1,0 +1,11 @@
+<div class="user-nav nav nav-pills nav-fill">
+  <%= link_to mypage_path(@user), class: "user-nav__item nav-link nav-item #{'active' if current_page?(mypage_path(@user))}" do %> 
+    レビュー一覧
+  <% end %>
+  <%= link_to like_reviews_mypage_path(@user), class: "user-nav__item nav-link nav-item #{'active' if current_page?(like_reviews_mypage_path(@user))}" do %>
+    お気に入り
+  <% end %>
+  <%= link_to comment_lists_mypage_path(@user), class: "user-nav__item nav-link nav-item #{'active' if current_page?(comment_lists_mypage_path(@user))}" do %>
+    コメント一覧
+  <% end %>
+</div>
