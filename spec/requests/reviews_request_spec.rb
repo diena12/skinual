@@ -4,7 +4,6 @@ RSpec.describe "Reviews", type: :request do
   describe '#show' do
     let(:user)  { create(:user) }
     let(:review)  { create(:review, user: user) }
-    
 
     before do 
       sign_in user
