@@ -95,3 +95,7 @@ a:hover{
   -webkit-transform: rotateX(360deg);
   transform: rotateX(360deg);
 }
+
+.navbar{
+  z-index:99;
+}
