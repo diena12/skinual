@@ -1,0 +1,14 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+Rails:
+  Enabled: true
+
+AllCops:
+  Exclude:
+  - 'bin/*'
+  - 'config/**/*'
+  - 'db/**/*'
+  - 'lib/tasks/_force_reload.rake'
+  - 'spec/spec_helper.rb'
+  - 'vendor/bundle/**/*'
