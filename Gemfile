@@ -29,6 +29,9 @@ gem 'kaminari'
 # パンくずリスト
 gem 'gretel'
 
+# Linter
+gem 'rubocop-airbnb'
+
 # gem 'dotenv-rails' 
 gem 'dotenv-rails'
 # Use CoffeeScript for .coffee assets and views
