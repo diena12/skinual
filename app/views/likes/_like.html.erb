@@ -1,0 +1,9 @@
+<% if !Like.exists?(user_id: current_user.id, review_id: review.id) %>
+  <%= link_to review_likes_path(review_id: review.id), method: :post, remote: true, class:"like-btn" do %>
+    <p class="like-button">お気に入り<i class="far fa-heart"></i><%= review.likes.count %></p>
+  <% end %>
+<% else %>
+  <%= link_to review_like_path(review_id: review.id, id: review.likes[0].id), method: :delete, remote: true, class:"like-btn" do %>
+    <p class="like-button">お気に入り登録済み<i class="far fa-heart"></i><%= review.likes.count %></p>
+  <% end %>
+<% end %>
