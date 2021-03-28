@@ -1,0 +1,18 @@
+<div class="col-md-4">
+  <div class="product-detail-image">
+    <%= image_tag @review.image.variant(resize:'460x460').processed %>
+  </div>
+</div>
+<div class="col-md-8 product-detail">
+  <h2><%= @review.name %></h2>
+  <h3>価格：約<%= @review.price %></h3>
+  <p><%= @review.description %></p>
+  <% if user_signed_in? %>
+    <div class='star-btn' id= "like_link">
+      <%= render partial: 'likes/like' , locals: {review: @review} %>
+    </div>
+  <% end %>
+  <% if @review.user.id == current_user.id %>
+    <%= link_to "編集", edit_review_path(@review) %>
+  <% end %>
+</div>
