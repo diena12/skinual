@@ -41,6 +41,10 @@ crumb :question do
   link "肌質診断テスト", question_path
 end
 
+# Ranking
+crumb :ranking do
+  link "レビューランキング", ranking_path
+end
 
 # crumb :projects do
 #   link "Projects", projects_path
