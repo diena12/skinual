@@ -18,6 +18,20 @@
 //= require popper
 //= require bootstrap-sprockets
 
+//sliderのjavascript//
+$('.carousel').carousel({
+  interval: 3500
+})
+
+//Dropdawnのjavascript//
+$(function(){
+  $('.dropdwn li').hover(function(){
+      $("ul:not(:animated)", this).slideDown();
+  }, function(){
+      $("ul.dropdwn_menu",this).slideUp();
+  });
+});
+
 // 診断テストのjavascript //
 $(function() {
   load();
@@ -42,7 +56,7 @@ $(function() {
 		if(i != q_list.length-1) {
 
 			// 問題の数「Q,1、Q,2、Q,3、Q,4、Q,5....」を追加
-      q_list.eq(i).prepend('<p>Q,' + String(i+1) + '</p>');
+      q_list.eq(i).prepend('<p class="question-number">Q,' + String(i+1) + '</p>');
 
       // 各問題に[Yes]、[No]ボタンを追加
       q_list.eq(i).append('<div class="select"><p>Yes</p><p>No</p></div>');
@@ -101,7 +115,7 @@ $(function() {
   }
 
 	// 診断結果ページで、Yesの数をローカルストレージから取り出して変数に格納
-  if($(".ansewer").length) {
+  if($(".answer").length) {
     var yes = [];
     for(var i=1;i<=localStorage.getItem("q-length");i++) {
       if(localStorage.getItem(i-1) == 1) {
@@ -112,28 +126,40 @@ $(function() {
     // 診断テスト結果
     if(yes.length == 0) {
       // Yesの数が、0個の時
-      $(".ansewer__title").text("Yesの数が０個の時のあなたは〇〇〇タイプです！");
-      $(".ansewer__txt").html("〇〇〇タイプの方は、テキストテキストテキストテキスト。<br>テキストテキストテキストテキストテキストテキスト。");
+      $('.answer__link').attr('href', '/categories/18');
+      $(".answer__title").text("あなたの肌質は混合肌タイプです！");
+      $(".answer__txt").html("混合肌タイプの方は、Tゾーンは脂浮きが気になったり、目の周りや頬など部分的な乾燥やつっぱり感を感じることが多いです。");
+      $(".answer__cause").html("原因としては、紫外線のダメージ、アルコールや喫煙、食生活、さらにストレスやホルモンバランスの乱れなどが挙げられます。");
     } else if(yes.length == 1) {
 			// Yesの数が、1個の時
-			$(".ansewer__title").text("Yesの数が１個の時のあなたは〇〇〇タイプです！");
-			$(".ansewer__txt").html("〇〇〇タイプの方は、テキストテキストテキストテキスト。<br>テキストテキストテキストテキストテキストテキスト。");
+      $('.answer__link').attr('href', '/categories/6');
+			$(".answer__title").text("あなたの肌質は脂性肌タイプです！");
+			$(".answer__txt").html("脂性肌タイプの方は、Tゾーンや頬の脂っぽさが気になる、また逆に目元や口元付近は乾燥が気にならないことが多いです。");
+      $(".answer__cause").html("特徴としては、皮脂が過剰になっていて、ホルモンバランスが乱れていたり皮脂腺が大きくなっている状態で、肌のテカリやべたつきがあり、ニキビや毛穴の黒ずみが気になる方も多いです。");
     } else if(yes.length == 2) {
 			// Yesの数が、2個の時
-			$(".ansewer__title").text("Yesの数が２個の時のあなたは〇〇〇タイプです！");
-			$(".ansewer__txt").html("〇〇〇タイプの方は、テキストテキストテキストテキスト。<br>テキストテキストテキストテキストテキストテキスト。");
+      $('.answer__link').attr('href', '/categories/6');
+			$(".answer__title").text("あなたの肌質は脂性肌タイプです！");
+			$(".answer__txt").html("脂性肌タイプの方は、Tゾーンや頬の脂っぽさが気になる、また逆に目元や口元付近は乾燥が気にならないことが多いです。");
+      $(".answer__cause").html("特徴としては、皮脂が過剰になっていて、ホルモンバランスが乱れていたり皮脂腺が大きくなっている状態。肌のテカリやべたつきがあり、ニキビや毛穴の黒ずみが気になる方も多いです。");
     } else if(yes.length == 3) {
 			// Yesの数が、3個の時
-			$(".ansewer__title").text("Yesの数が３個の時のあなたは〇〇〇タイプです！");
-			$(".ansewer__txt").html("〇〇〇タイプの方は、テキストテキストテキストテキスト。<br>テキストテキストテキストテキストテキストテキスト。");
+      $('.answer__link').attr('href', '/categories/12');
+			$(".answer__title").text("あなたの肌質は乾燥肌タイプです！");
+			$(".answer__txt").html("乾燥肌タイプの方は、乾燥が気になり顔全体でつっぱり感やひりつきを感じることが多い。");
+      $(".answer__cause").html("原因としては、紫外線や気温の低下、加齢などの影響が挙げられる。");
     } else if(yes.length == 4) {
 			// Yesの数が、4個の時
-			$(".ansewer__title").text("Yesの数が４個の時のあなたは〇〇〇タイプです！");
-			$(".ansewer__txt").html("〇〇〇タイプの方は、テキストテキストテキストテキスト。<br>テキストテキストテキストテキストテキストテキスト。");
+      $('.answer__link').attr('href', '/categories/12');
+			$(".answer__title").text("あなたの肌質は乾燥肌タイプです！");
+			$(".answer__txt").html("乾燥肌タイプの方は、乾燥が気になり顔全体でつっぱり感やひりつきを感じることが多い。");
+      $(".answer__cause").html("原因としては、紫外線や気温の低下、加齢などの影響が挙げられる。");
     } else if(yes.length == 5) {
 			// Yesの数が、5個の時
-			$(".ansewer__title").text("Yesの数が５個の時のあなたは〇〇〇タイプです！");
-			$(".ansewer__txt").html("〇〇〇タイプの方は、テキストテキストテキストテキスト。<br>テキストテキストテキストテキストテキストテキスト。");
+      $('.answer__link').attr('href', '/categories/18');
+      $(".answer__title").text("あなたの肌質は混合肌タイプです！");
+      $(".answer__txt").html("混合肌タイプの方は、Tゾーンは脂浮きが気になったり、目の周りや頬など部分的な乾燥やつっぱり感を感じることが多いです。");
+      $(".answer__cause").html("原因としては、紫外線のダメージ、アルコールや喫煙、食生活、さらにストレスやホルモンバランスの乱れなどが挙げられます。");
     }
   }
 
@@ -141,15 +167,15 @@ $(function() {
 
 
 function load() {
-	// 初回読み込み時と読み込み完了後、ウィンドウサイズの変更の時
+	//初回読み込み時と読み込み完了後、ウィンドウサイズの変更の時
   var q_height = [];
   $(".questions li").each(function(i){
     q_height.push(Number($(".questions li").eq(i).css('height').slice(0,-2)) + 54);
   });
-	// 質問全体で一番高さの有るコンテンツに合わせて高さ調整
-  // 最大数を取得する「Math.max.apply(null,value)」について https://hajimete.org/jquery-get-the-maximum-and-minimum-values
+	//質問全体で一番高さの有るコンテンツに合わせて高さ調整
+  //最大数を取得する「Math.max.apply(null,value)」について https://hajimete.org/jquery-get-the-maximum-and-minimum-values
   $(".questions").css({height: Math.max.apply(null,q_height)});
-}
+} 
 
 // レビューの新規投稿のjavescript //
 $(function(){
@@ -160,7 +186,7 @@ $(function(){
   function appendChildrenBox(insertHTML){
     var childSelectHtml = "";
     childSelectHtml = `<div class="category__child" id="children_wrapper">
-                        <select id="child__category" name="post[category_id]" class="serect_field">
+                        <select id="child__category" name="review[category_id]" class="serect_field">
                           <option value="">---</option>
                           ${insertHTML}
                         </select>
