@@ -4,13 +4,17 @@
     <title>Skinual</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- GOOGLE FONT -->
+    <%= stylesheet_link_tag "application", 'https://fonts.googleapis.com/css?family=Oxygen:400,300,700', :media => "all" %>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
   </head>
 
   <body>
-  <%= render "/layouts/header" %>
+    <%= render "/layouts/header" %>
     <%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
