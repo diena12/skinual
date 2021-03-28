@@ -9,11 +9,11 @@
       <%= link_to review_path(review.id) do %>
         <h2 class="fs-18 font-weight-bold"><%= review.name %></h2>
       <% end %>
-      <%= review.description %>
       <p>カテゴリー：
       <%= review.category.parent.name %>,
       <%= review.category.name %>
       </p>
+      <%= review.updated_at.strftime("%Y-%m-%d %H:%M")%>
     </div>
   </div>
 </div>
