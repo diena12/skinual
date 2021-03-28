@@ -11,4 +11,34 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import 'bootstrap'
+
+
+@font-face {
+  font-family: 'CJK';
+  src: asset_url('NotoSansCJKjp-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src: asset_url('Butler_Bold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import 'bootstrap';
+@import 'mypages';
+@import 'skinual/header';
+@import 'skinual/footer';
+@import 'skinual/sign_up';
+@import 'skinual/category_bar';
+@import 'skinual/review_list';
+@import 'skinual/question';
+@import 'skinual/answer';
+@import 'skinual/top_page';
+@import 'skinual/like';
+@import 'review/new';
+@import 'review/show';
+
+
