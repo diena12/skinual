@@ -1,22 +1,18 @@
+<% breadcrumb :review_show, @review %>
+<%= breadcrumbs separator: " &rsaquo; " %>  
 <section class="mainContent clearfix">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="media">
-          <div class="media-left">
-            <div id="carousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <%= image_tag @review.image.variant(resize:'460x460').processed %>
-              </div>
-            </div>
-          </div>
-          <div class="media-body">
-            <h2><%= @review.name %></h2>
-            <h3><%= @review.price %></h3>
-            <p><%= @review.description %></p>
-          </div>
-        </div>
-      </div>  
+    <div class="row product">
+      <%= render partial: 'product_show'%>
+    </div>
+    <% if @comments.present? %>
+      <div class="row comment-list">
+        <%= render partial: 'comment_show'%>
+      </div>
+    <% end %>
+    <div class="p-3">
+      <%= render partial: 'comment_post'%>
     </div>
   </div>
 </section>
+<%= render '/layouts/footer' %>
