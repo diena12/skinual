@@ -16,13 +16,15 @@ Rails.application.routes.draw do
   end
   get '/reviews/:id',             to: 'reviews#show'
   get '/reviews',                 to: 'reviews#index'
-  get '/reviews/item',            to: 'reviews#search'
+  # Ranking
+  get '/ranking',                 to: 'reviews#ranking'
+  
 
   # Category
   get '/categories/:id',          to: 'categories#show'
   # Like
   resources :reviews do
-    resources :likes,               only: [:create, :destroy]
+    resources :likes,             only: [:create, :destroy]
   end
   # Mypage
   resources :mypages,             only: [:show, :edit, :update] do
@@ -33,7 +35,7 @@ Rails.application.routes.draw do
     end
   end
   
-  #Comment
+  # Comment
   resources :reviews do    
     resources :comments, only: [:create]  
   end
