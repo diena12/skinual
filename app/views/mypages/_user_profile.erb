@@ -3,7 +3,7 @@
     <div class="user-profile">
       <div class="image text-center">
         <% if @user.image.attached? %>
-          <%= image_tag @comment.image %>
+          <%= image_tag @user.image %>
         <% else %>
           <%= image_tag "no-image.jpg"%>
         <% end %>
