@@ -3,11 +3,14 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @reviews = Review.includes(:category).order(id: "DESC")
+    @reviews = Review.includes(:category).order(id: "DESC").page(params[:page]).per(3)
+
   end
 
   def show
     @review = Review.find(params[:id])
+    @comments = @review.comments  
+    @comment = current_user.comments.new
   end
 
 
@@ -24,6 +27,20 @@ class ReviewsController < ApplicationController
     else
       render("/reviews/new")
     end
+  end
+
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+    redirect_to review_path(@review)
+  end
+
+  def ranking
+    @all_ranks = Review.find(Like.group(:review_id).order('count(review_id) desc').limit(3).pluck(:review_id))
   end
 
   def get_category_children
