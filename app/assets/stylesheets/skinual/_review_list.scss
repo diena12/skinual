@@ -1,7 +1,14 @@
 .mainContent{
   margin-top: 30px;
+  padding-bottom: 30px;
+  a{
+    color:black;
+  }
 }
-
+.pagination{
+  justify-content: center;
+  margin-top: 20px;
+}
 .reviews{
   display: flex;
   margin-bottom: 20px;
@@ -13,4 +20,9 @@
   .review-image{
     margin-right:20px
   }
+}
+
+.ranking{
+  margin-top:30px;
+  margin-bottom:40px;
 }
