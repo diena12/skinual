@@ -1,3 +1,5 @@
+<% breadcrumb :review %>
+<%= breadcrumbs separator: " &rsaquo; " %>
 <section class="mainContent clearfix ">
   <div class="container">
     <div class="row">
@@ -13,4 +15,6 @@
       </div>
     </div>
   </div>
+  <%= paginate @reviews %>
 </section>
+<%= render "/layouts/footer" %>
