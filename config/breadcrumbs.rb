@@ -46,6 +46,11 @@ crumb :ranking do
   link "レビューランキング", ranking_path
 end
 
+# Privacy_policy
+crumb :privacy do
+  link "プライバシーポリシー", privacy_policy_path
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
