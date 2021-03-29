@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get '/',                        to: 'skinual#index'
   get '/question',                to: 'skinual#question'
   get 'answer',                   to: 'skinual#answer'
+  get '/privacy_policy',          to: 'skinual#privacy'
   # Review
-  resources :reviews,             only: [:new, :create, :edit]
+  resources :reviews,             only: [:new, :create, :edit, :destroy]
   resources :reviews do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
