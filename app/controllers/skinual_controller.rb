@@ -7,4 +7,7 @@ class SkinualController < ApplicationController
 
   def answer
   end
+
+  def privacy
+  end
 end
