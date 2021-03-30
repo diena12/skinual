@@ -4,9 +4,13 @@
       <div class="row comments">
         <div class="comment-image col-md-2">
           <% if comment.user.image.attached? %>
-            <%= image_tag comment.user.image.variant(resize:'100x100').processed  %>
+            <%= link_to mypage_path(comment.user) do %>
+              <%= image_tag comment.user.image.variant(resize:'100x100').processed %>
+            <% end %>
           <% else %>
-            <%= image_tag "no-image.jpg" %>
+            <%= link_to mypage_path(comment.user) do %>
+              <%= image_tag "no-image.jpg" %>
+            <% end %>
           <% end %>
           <%= link_to mypage_path(comment.user) do %>
             <p><%= comment.user.name %></p>
