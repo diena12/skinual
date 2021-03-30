@@ -32,6 +32,10 @@ gem 'gretel'
 # Linter
 gem 'rubocop-airbnb'
 
+# 管理者権限
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
+
 # gem 'dotenv-rails' 
 gem 'dotenv-rails'
 # Use CoffeeScript for .coffee assets and views
