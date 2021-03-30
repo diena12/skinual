@@ -39,6 +39,12 @@ class ReviewsController < ApplicationController
     redirect_to review_path(@review)
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to reviews_path
+  end
+
   def ranking
     @all_ranks = Review.find(Like.group(:review_id).order('count(review_id) desc').limit(3).pluck(:review_id))
   end
