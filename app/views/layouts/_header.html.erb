@@ -33,6 +33,7 @@
         </ul>
       <% else %>
         <div class="sign-button">
+          <%= link_to 'Guest Log In', guest_sign_in_path, method: :post, class: 'btn-social-Guest' %>
           <a href="/users/sign_up" class="btn-social-Signup">
             <span>Sign Up</span>
           </a>
