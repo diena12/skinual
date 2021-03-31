@@ -1,0 +1,26 @@
+<% breadcrumb :review %>
+<%= breadcrumbs separator: " &rsaquo; " %>
+<section class="mainContent clearfix ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 review-search">
+        <%= search_form_for @q, url: search_reviews_path do |f| %>
+          <%= f.search_field :name_cont, :class => 'search-field' %>
+          <%= f.submit '検索', :class => 'search-submit' %>
+        <% end %>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-12 sideBar">
+        <%= render partial: "category_bar", locals: {parents: @category_parent} %>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+        <div class="card bg-white border-none shadow-sm ">
+          <div class=" card-header font-weight-bold">みんなのおすすめ商品一覧</div>
+            <%= render partial: "review_list", collection: @results, as: "review" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= paginate @reviews %>
+</section>
+<%= render "/layouts/footer" %>
