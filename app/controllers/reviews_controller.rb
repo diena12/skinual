@@ -1,9 +1,10 @@
 class ReviewsController < ApplicationController
-  before_action :set_category, only: [:new, :create, :edit, :update, :index]
+  before_action :set_category, only: [:new, :create, :edit, :update, :index, :search]
   before_action :authenticate_user!
+  before_action :set_q, only: [:index, :search]
 
   def index
-    @reviews = Review.includes(:category).order(id: "DESC").page(params[:page]).per(3)
+    @reviews = Review.includes(:category).order(id: "DESC").page(params[:page]).per(5)
 
   end
 
@@ -49,6 +50,11 @@ class ReviewsController < ApplicationController
     @all_ranks = Review.find(Like.group(:review_id).order('count(review_id) desc').limit(3).pluck(:review_id))
   end
 
+  def search
+    @results = @q.result.order(id: "DESC")
+    @reviews = @results.page(params[:page]).per(5)
+  end
+
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
   end
@@ -57,6 +63,9 @@ class ReviewsController < ApplicationController
     @category_parent = Category.where(ancestry: nil)
   end
 
+  def set_q
+    @q = Review.ransack(params[:q])
+  end
 
 
   def review_params
