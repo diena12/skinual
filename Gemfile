@@ -36,6 +36,9 @@ gem 'rubocop-airbnb'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 
+#検索機能
+gem 'ransack'
+
 # gem 'dotenv-rails' 
 gem 'dotenv-rails'
 # Use CoffeeScript for .coffee assets and views
