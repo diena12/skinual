@@ -34,6 +34,7 @@ $(function(){
 });
 
 // 診断テストのjavascript //
+$(document).on('turbolinks:load', function () {
 $(function() {
   load();
   $(window).on("load resize", function() {load();});
@@ -163,10 +164,10 @@ $(function() {
       $(".answer__cause").html("原因としては、紫外線のダメージ、アルコールや喫煙、食生活、さらにストレスやホルモンバランスの乱れなどが挙げられます。");
     }
   }
-
+});
 });
 
-
+$(document).on('turbolinks:load', function () {
 function load() {
 	//初回読み込み時と読み込み完了後、ウィンドウサイズの変更の時
   var q_height = [];
@@ -176,9 +177,11 @@ function load() {
 	//質問全体で一番高さの有るコンテンツに合わせて高さ調整
   //最大数を取得する「Math.max.apply(null,value)」について https://hajimete.org/jquery-get-the-maximum-and-minimum-values
   $(".questions").css({height: Math.max.apply(null,q_height)});
-} 
+}
+});
 
 // レビューの新規投稿のjavescript //
+$(document).on('turbolinks:load', function () {
 $(function(){
   function appendOption(category){
     var html = `<option value="${category.id}">${category.name}</option>`;
@@ -222,3 +225,4 @@ $(function(){
       $('#children_wrapper').remove();
     }});
 })
+});
