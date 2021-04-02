@@ -25,6 +25,7 @@ $('.carousel').carousel({
 })
 
 //Dropdawnのjavascript//
+$(document).on('turbolinks:load', function() {
 $(function(){
   $('.dropdwn li').hover(function(){
       $("ul:not(:animated)", this).slideDown();
@@ -163,9 +164,9 @@ $(function() {
       $(".answer__cause").html("原因としては、紫外線のダメージ、アルコールや喫煙、食生活、さらにストレスやホルモンバランスの乱れなどが挙げられます。");
     }
   }
+
 });
 
-$(document).on('turbolinks:load', function () {
 function load() {
 	//初回読み込み時と読み込み完了後、ウィンドウサイズの変更の時
   var q_height = [];
