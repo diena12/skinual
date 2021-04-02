@@ -34,7 +34,7 @@ $(function(){
 });
 
 // 診断テストのjavascript //
-$(document).on('turbolinks:load', function () {
+document.addEventListener("turbolinks:load", function () {
 $(function() {
   load();
   $(window).on("load resize", function() {load();});
