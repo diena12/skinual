@@ -34,7 +34,6 @@ $(function(){
 });
 
 // 診断テストのjavascript //
-document.addEventListener("turbolinks:load", function () {
 $(function() {
   load();
   $(window).on("load resize", function() {load();});
@@ -164,7 +163,6 @@ $(function() {
       $(".answer__cause").html("原因としては、紫外線のダメージ、アルコールや喫煙、食生活、さらにストレスやホルモンバランスの乱れなどが挙げられます。");
     }
   }
-});
 });
 
 $(document).on('turbolinks:load', function () {
