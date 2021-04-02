@@ -21,12 +21,12 @@ jobs:
             docker-compose run web rails db:create db:migrate
       - run:
           name: Run rspec
-          command: docker-compose run web bundle exec rspec
+          command: docker-compose exec skinual rspec
 
   rubocop:
-    working_directory: ~/potepanec
+    working_directory: ~/skinual
     docker:
-      - image: circleci/ruby:2.5.1
+      - image: circleci/ruby:2.5.3
     steps:
       - checkout
       - restore_cache:
