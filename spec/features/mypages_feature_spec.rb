@@ -16,3 +16,4 @@ RSpec.feature "Show page test", type: :feature do
       expect(page).to have_content user.profile
     end
   end
+end
