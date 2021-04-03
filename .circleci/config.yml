@@ -18,10 +18,10 @@ jobs:
       - run:
           name: Setup database
           command: |
-            docker-compose run web rails db:create db:migrate
+            docker-compose exec rails db:create db:migrate
       - run:
           name: Run rspec
-          command: docker-compose exec skinual rspec
+          command: docker-compose exec rspec
 
   rubocop:
     working_directory: ~/skinual
