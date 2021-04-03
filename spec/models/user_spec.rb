@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user)  { create(:user)}
+  let(:user) { create(:user) }
 
   describe 'ユーザー登録が可能な場合' do
     it '新規登録できること' do
@@ -40,4 +40,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-

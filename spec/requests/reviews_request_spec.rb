@@ -4,9 +4,9 @@ RSpec.describe "Reviews", type: :request do
   describe 'GET #index' do
     let(:user)  { create(:user) }
     let(:review)  { create(:review, user: user) }
-  
+
     before do
-      sign_in user 
+      sign_in user
       get reviews_path
     end
 
@@ -19,7 +19,7 @@ RSpec.describe "Reviews", type: :request do
     let(:user)  { create(:user) }
     let(:review)  { create(:review, user: user) }
 
-    before do 
+    before do
       sign_in user
       get review_path(review.id)
     end
@@ -44,9 +44,9 @@ RSpec.describe "Reviews", type: :request do
   describe 'GET #edit' do
     let(:user)  { create(:user) }
     let(:review)  { create(:review, user: user) }
-  
+
     before do
-      sign_in user 
+      sign_in user
       get edit_review_path(review.id)
     end
 
@@ -70,9 +70,9 @@ RSpec.describe "Reviews", type: :request do
   describe 'GET #new' do
     let(:user)  { create(:user) }
     let(:review)  { create(:review, user: user) }
-  
+
     before do
-      sign_in user 
+      sign_in user
       get new_review_path(review.id)
     end
 

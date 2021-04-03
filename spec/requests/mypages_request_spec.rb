@@ -5,7 +5,7 @@ RSpec.describe "Mypages", type: :request do
     let(:user) { create(:user) }
 
     before do
-      sign_in user 
+      sign_in user
       get mypage_path(user)
     end
 
