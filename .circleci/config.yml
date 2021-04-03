@@ -5,23 +5,13 @@ jobs:
     docker:
       - image: circleci/ruby
     steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Start containers and verify it is working
-          command: |
-            set -x
-            docker-compose up -d
-      - run:
-          name: sleep for waiting launch db
-          command: sleep 1
+      - setup
       - run:
           name: Setup database
-          command: |
-            docker-compose run web rails db:create db:migrate
+          command: bundle exec rails db:migrate
       - run:
           name: Run rspec
-          command: docker-compose exec skinual bundle exec rspec
+          command: bundle exec rspec
 
   rubocop:
     working_directory: ~/skinual
