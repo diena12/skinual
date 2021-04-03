@@ -65,7 +65,6 @@ class ReviewsController < ApplicationController
     @q = Review.ransack(params[:q])
   end
 
-
   def review_params
     params.require(:review).permit(:name, :description, :price, :texture, :image,:category_id)
   end
