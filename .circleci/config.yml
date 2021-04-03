@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Setup database
           command: |
-            docker-compose exec skinual bash -c 'yes n | bundle exec rails db:migrate
+            docker-compose exec skinual bundle exec rails db:migrate
       - run:
           name: Run rspec
           command: docker-compose exec skinual rspec
