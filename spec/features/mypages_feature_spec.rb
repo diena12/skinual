@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature "Show page test", type: :feature do
-  
   let(:user) { create(:user) }
 
   background do
