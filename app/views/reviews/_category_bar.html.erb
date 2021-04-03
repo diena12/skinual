@@ -8,7 +8,7 @@
     <ul class="navbar-nav flex-column">             
       <% parents.each do |parent| %>
         <li class="nav-item">
-          <a class="nav-link collapsed text-truncate" href="/" data-toggle="collapse" data-target="#submenu<%= parent.id %>">
+          <a class="nav-link collapsed text-truncate" href="/" data-toggle="collapse" data-target="#submenu<%= parent.id %>"  >
             <i class="fa"></i><span class="d-none d-sm-inline"><%= parent.name %></span>
           </a>
           <div class="collapse" id="submenu<%= parent.id %>">

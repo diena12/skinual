@@ -4,7 +4,7 @@ class LikesController < ApplicationController
     @like = Like.create(review_id: @review.id, user_id: current_user.id)
     respond_to do |format|
       if @like.save
-        format.js 
+        format.js
       end
     end
   end

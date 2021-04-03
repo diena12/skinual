@@ -5,15 +5,13 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.includes(:category).order(id: "DESC").page(params[:page]).per(5)
-
   end
 
   def show
     @review = Review.find(params[:id])
-    @comments = @review.comments  
+    @comments = @review.comments
     @comment = current_user.comments.new
   end
-
 
   def new
     @review = Review.new
@@ -69,13 +67,7 @@ class ReviewsController < ApplicationController
 
 
   def review_params
-    params.require(:review).permit(
-      :name,
-      :description,
-      :price,
-      :texture,
-      :image,
-      :category_id)
+    params.require(:review).permit(:name, :description, :price, :texture, :image,:category_id)
   end
 
 end

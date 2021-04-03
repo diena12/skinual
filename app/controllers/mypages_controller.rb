@@ -1,11 +1,9 @@
 class MypagesController < ApplicationController
   before_action :set_user
   def show
-
   end
 
   def edit
-
   end
 
   def update
@@ -14,15 +12,12 @@ class MypagesController < ApplicationController
   end
 
   def review_lists
-
   end
 
   def like_reviews
-
   end
 
   def comment_lists
-
   end
 
   def set_user
@@ -30,11 +25,6 @@ class MypagesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(
-      :name,
-      :skin_type,
-      :profile,
-      :image,
-      )
+    params.require(:user).permit(:name, :skin_type, :profile, :image,)
   end
 end
