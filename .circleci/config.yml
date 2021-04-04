@@ -71,10 +71,6 @@ jobs:
       - run:
           name: Create fresh Heroku app
           command: heroku apps:create $HEROKU_APP_NAME --stack heroku-18 --addons=jawsdb:kitefin
-      # Update mimemagic
-      - run:
-          name: Update mimemagic (0.3.5)
-          command: bundle update mimemagic
       - run:
           name: Deploy
           command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
