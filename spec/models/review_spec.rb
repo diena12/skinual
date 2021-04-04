@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Review, type: :model do
-  let(:review) { create(:review, name: "香水",description: "いい匂い", texture: "しっとり", price: "2000")}
+  let(:user) { create(:user) }
+  let(:review) { create(:review) }
 
   describe 'reviewのバリデーションを検証する場合' do
     it '製品名が入力されていないと登録できないこと' do
