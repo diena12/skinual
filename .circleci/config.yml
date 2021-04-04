@@ -6,11 +6,13 @@ jobs:
         environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
-          DB_USERNAME: root
-          DB_PASSWORD: password
           TZ: "Japan"
       - image: circleci/mysql:8.0
         command: [--default-authentication-plugin=mysql_native_password]
+        environment:
+          MYSQL_USER: root
+          MYSQL_DB: app_name_test
+
     working_directory: ~/skinual
     steps:
       - checkout
