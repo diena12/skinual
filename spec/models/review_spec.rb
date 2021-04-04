@@ -1,10 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Review, type: :model do
-  let(:review) { create(:review) }
-
-  before do
-    sign_in user
+  let(:review) do
+    Review.new({
+      name: review_name,
+      description: review_description
+      texture: review_texture
+      price: review_price
+    })
   end
 
   describe 'reviewのバリデーションを検証する場合' do
