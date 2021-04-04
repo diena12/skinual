@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.describe Review, type: :model do
   let(:review) { create(:review) }
 
+  before do
+    sign_in user
+  end
+
   describe 'reviewのバリデーションを検証する場合' do
     it '製品名が入力されていないと登録できないこと' do
       review.name = nil
