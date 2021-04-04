@@ -9,12 +9,7 @@ jobs:
           DB_USERNAME: root
           DB_PASSWORD: password
           TZ: "Japan"
-      - image: circleci/mysql:5.7.22
-        command: [--default-authentication-plugin=mysql_native_password]
-        environment:
-          MYSQL_USER: root
-          MYSQL_PASSWORD: password
-          MYSQL_DB: app_name_test
+      - image: circleci/mysql:8.0
 
     working_directory: ~/skinual
     steps:
