@@ -7,11 +7,10 @@ jobs:
     environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
-      - image: circleci/mysql:8.0.21
+      - image: circleci/mysql:2.0
         environment:
           MYSQL_DATABASE: app_name_test
           MYSQL_ROOT_PASSWORD: password
-    working_directory: ~/skinual
     steps:
       - checkout
       - restore_cache:
