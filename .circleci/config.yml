@@ -3,7 +3,7 @@ jobs:
   rspec:
     docker:
       - image: circleci/ruby:2.5.3
-    environment:
+        environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
       - image: circleci/mysql:8.0.21
