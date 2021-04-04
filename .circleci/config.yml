@@ -3,22 +3,34 @@ jobs:
   rspec:
     working_directory: ~/skinual
     docker:
-      - image: circleci/ruby
+      - image: circleci/ruby:2.5.3
+    environment:
+          RAILS_ENV: test
+          DB_HOST: 127.0.0.1
+      - image: circleci/mysql:8.0.21
+        environment:
+          MYSQL_DATABASE: app_name_test
+      MYSQL_ROOT_PASSWORD: password
+    working_directory: ~/skinual
     steps:
       - checkout
-      - setup_remote_docker
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run: yarn install
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+      # Rspec
       - run:
-          name: Start containers and verify it is working
-          command: |
-            set -x
-            docker-compose up -d
-      - run:
-          name: Setup database
-          command: |
-            docker-compose exec skinual bundle exec rails db:migrate
-      - run:
-          name: Run rspec
-          command: docker-compose exec skinual rspec
+          name: Rspec
+          command: bundle exec rspec
 
   rubocop:
     working_directory: ~/skinual
