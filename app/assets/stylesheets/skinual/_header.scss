@@ -1,0 +1,115 @@
+//ドロップダウンメニューのCSS//
+.dropdwn{
+  max-width: 250px;
+
+  .user-name {
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+    margin-top:20px;
+    cursor:pointer;
+    position: relative;
+    list-style: none;
+    border-radius: 7px;
+    background-color: #a3a09f;
+    color:#fff
+  }
+
+  .dropdwn_menu{
+    width: 100%;
+    display: none;
+    position: absolute;
+    margin-left: -5px;
+    margin-top: 5px;
+    background-color: white;
+    z-index:99;
+
+    li{
+      list-style: none;
+      width: 100%;
+      margin-top: 5px;
+      padding:10px 20px;
+      font-size:12px;
+
+      a{
+        color: black;
+      }
+    }
+  }
+}
+
+
+
+a:hover{
+  color:black;
+}
+//Sign UpボタンのCSS//
+.sign-button{
+  margin:0 0 0 auto;
+}
+.btn-social-Guest{
+  color:black;
+  border:1px solid #333;
+  border-radius: 7px;
+  display: inline-block;
+  height: 40px;
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 40px;
+  background: white;
+  overflow: hidden;
+  text-decoration:none;
+}
+.btn-social-Signup {
+  color:black;
+  border:1px solid #333;
+  border-radius: 7px;
+  display: inline-block;
+  height: 40px;
+  width: 120px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+  background: white;
+  overflow: hidden;
+  text-decoration:none;
+  margin:0 20px;
+
+  span {
+    display:inline-block;
+    transition: .5s;
+  }
+}
+.btn-social-Signup:hover span {
+  -webkit-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+
+.btn-social-Login {
+  color: black;
+  border:1px solid #333;
+  border-radius: 7px;
+  display: inline-block;
+  height: 40px;
+  width: 120px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+  background: white;
+  overflow: hidden;
+  text-decoration:none;
+
+  span {
+    display:inline-block;
+    transition: .5s;
+  }
+}
+.btn-social-Login:hover span {
+  -webkit-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+
+.navbar{
+  z-index:99;
+}

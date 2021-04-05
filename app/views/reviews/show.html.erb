@@ -1,0 +1,19 @@
+<% breadcrumb :review_show, @review %>
+<%= breadcrumbs separator: " &rsaquo; " %>  
+<section class="mainContent clearfix">
+  <div class="container">
+    <div class="row product">
+      <%= render partial: 'product_show'%>
+    </div>
+    <% if @comments.present? %>
+      <h2 class="comment-title">コメント一覧</h2>
+      <div class="row comment-list">
+        <%= render partial: 'comment_show'%>
+      </div>
+    <% end %>
+    <div class="p-3 comment-post-area">
+      <%= render partial: 'comment_post'%>
+    </div>
+  </div>
+</section>
+<%= render '/layouts/footer' %>

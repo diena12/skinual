@@ -1,0 +1,25 @@
+footer{
+  background-color: #9fa8af;
+  padding:40px;
+  .footer-item{
+    list-style: none;
+    font-size:16px;
+    margin-bottom:14px;
+
+    a{
+      color:#fff;
+    }
+  }
+
+  .site{
+    font-size: 28px;
+    color:#fff;
+    font-family: "Butler";
+  }
+
+  .copyright{
+    color:#fff;
+    text-align: center;
+    margin-top:90px;
+  }
+}

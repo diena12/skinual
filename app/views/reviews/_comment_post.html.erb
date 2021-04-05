@@ -1,0 +1,12 @@
+<h3 class="comment-title">コメントを投稿する</h3>
+  <%= form_with(model:[@review, @comment], method: :post) do |f| %>
+    <div class="row">
+      <div class="col-md-12 comment-area">
+        <%= f.text_area :comment_content %>
+        <%= f.hidden_field :review_id, value: @review.id %>
+      </div>
+      <div class="review-register-action">
+        <%= f.submit 'コメントする' %> 
+      </div>
+    </div>
+  <% end %>

@@ -1,0 +1,45 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+
+@font-face {
+  font-family: 'CJK';
+  src: asset_url('NotoSansCJKjp-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src: asset_url('Butler_Bold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import 'bootstrap';
+@import 'mypages';
+@import 'skinual/header';
+@import 'skinual/footer';
+@import 'skinual/sign_up';
+@import 'skinual/category_bar';
+@import 'skinual/review_list';
+@import 'skinual/question';
+@import 'skinual/answer';
+@import 'skinual/top_page';
+@import 'skinual/privacy_policy';
+@import 'skinual/like';
+@import 'review/new';
+@import 'review/show';
+
+

@@ -1,0 +1,20 @@
+<div class="form-wrapper">
+  <h1>Log in</h1>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="form-item">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder =>"メールアドレス" %>
+    <div>
+    <div class="form-item">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autofocus: true, autocomplete: "current-password",:placeholder =>"パスワード" %>
+    <div>
+    <div class="button-panel">
+      <input type="submit" class="button" title="Login" value="Sign In">
+    </div>
+    <div class="form-footer">
+    <p><a href="/users/sign_up">新しくアカウントを作成する</a></p>
+    </div>
+  <% end %>
+</div>

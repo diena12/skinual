@@ -1,0 +1,49 @@
+<% breadcrumb :review_edit, @review %>
+<%= breadcrumbs separator: " &rsaquo; " %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <%= form_for(@review) do |f| %>
+        <div class="review-box">
+          <div class="review-title">
+            <h3>レビュー編集</h3>
+          </div>
+          <div class="append__category">
+            <div class="category">
+              <div class="form__label">
+                <div class="weight-bold-text lavel__name ">カテゴリー</div>
+                <div class="lavel__Required">
+                  <%= f.collection_select :category_id, @category_parent, :id, :name,{ include_blank: "選択してください"},class:"serect_field", id:"item_category_id" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-detail mini">
+            <div class="review-icon"><%= f.label :image,"商品画像" %></div>
+              <%= f.file_field :image %>
+            </div>
+            <div class="review-detail">
+              <div class="review-icon"><%= f.label :name,"商品名"%></div>
+                <%= f.text_field :name %>
+              </div>
+            <div class="review-detail">
+              <div class="review-icon"><%= f.label :description,"使用感"%></div>
+                <%= f.text_area :description %>
+              </div>
+            <div class="review-detail">
+              <div class="review-icon"><%= f.label :texture,"テクスチャー" %></div>
+                <%= f.select :texture, {'しっとり': 'しっとり', 'さらさら': 'さらさら'} %>
+              </div>
+            <div class="review-detail">
+              <div class="review-icon"><%= f.label :price,"参考価格" %></div>
+                <%= f.text_field :price %>
+            </div>
+            <div class="review-register-action">
+              <%= f.submit "編集完了" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

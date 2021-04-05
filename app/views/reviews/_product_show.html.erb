@@ -1,0 +1,42 @@
+<div class="col-md-4">
+  <div class="product-detail-image">
+    <%= image_tag @review.image.variant(resize:'460x460').processed %>
+  </div>
+  <div class="review-user">
+    <div class="image">
+      <% if @review.user.image.attached? %>
+        <%= link_to mypage_path(@review.user) do %>
+          <%= image_tag @review.user.image %>
+        <% end %>
+      <% else %>
+        <%= link_to mypage_path(@review.user) do %>
+          <%= image_tag "no-image.jpg"%>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="name">
+      <%= link_to mypage_path(@review.user) do %>
+        <%= @review.user.name %>
+      <% end %>
+      <p class="skin_type"><%= @review.user.skin_type %></p>
+    </div>
+  </div>
+</div>
+<div class="col-md-8 product-detail">
+  <h2><%= @review.name %></h2>
+  <h3>価格：約<%= @review.price %></h3>
+  <p><%= @review.description %></p>
+  <% if user_signed_in? %>
+    <div class='star-btn' id= "like_link">
+      <%= render partial: 'likes/like' , locals: {review: @review} %>
+    </div>
+  <% end %>
+  <% if @review.user.id == current_user.id %>
+    <%= link_to edit_review_path(@review) do %>
+      <p class="like-button review-button">編集</p>
+    <% end %>
+    <%= link_to review_path(@review), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+      <p class="like-button review-button">削除</p>
+    <% end %>
+  <% end %>
+</div>

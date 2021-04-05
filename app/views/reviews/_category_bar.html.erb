@@ -1,0 +1,25 @@
+<div class="panel navbar navbar-expand-lg navbar-light">
+  <div class="navbar-brand category-heading">カテゴリー</div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse category-list" id="navbarNavDropdown">
+    <ul class="navbar-nav flex-column">             
+      <% parents.each do |parent| %>
+        <li class="nav-item">
+          <a class="nav-link collapsed text-truncate" href="/" data-toggle="collapse" data-target="#submenu<%= parent.id %>"  >
+            <i class="fa"></i><span class="d-none d-sm-inline"><%= parent.name %></span>
+          </a>
+          <div class="collapse" id="submenu<%= parent.id %>">
+            <ul class="flex-column pl-3 nav">
+              <% parent.children.each do |child| %>
+                <li class="nav-item"><a class="nav-link" href="/categories/<%= child.id %>"><span><%= child.name %></span></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </li>
+      <% end %>                   
+    </ul>
+  </div>
+</div>

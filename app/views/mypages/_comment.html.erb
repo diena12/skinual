@@ -1,0 +1,28 @@
+<% @user.comments.each do |comment| %>
+  <div class="card-body p-3">
+    <div class="row comments">
+      <div class="comment-image col-md-2">
+        <% if comment.user.image.attached? %>
+          <%= image_tag comment.user.image.variant(resize:'150x150').processed  %>
+        <% else %>
+          <%= image_tag "no-image.jpg" %>
+        <% end %>
+        <%= link_to mypage_path(@user) do %>
+          <p class="fs-18 font-weight-bold"><%= comment.user.name %></p>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <div class="review-contents">
+          <p><%= comment.updated_at.strftime("%Y-%m-%d %H:%M")%></p>
+          <h4><%= comment.comment_content %></h4>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <%= link_to review_path(comment.review) do %>
+        <%= comment.review.name %>
+        <%= image_tag comment.review.image.variant(resize:'150x150').processed %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
