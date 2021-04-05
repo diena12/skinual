@@ -66,11 +66,8 @@ jobs:
       - build-tools/install-ci-tools
       - jq/install
       - run:
-          name: Define Heroku app name to create
-          command: echo "export HEROKU_APP_NAME=skinual-beautiful" >> $BASH_ENV
-      - run:
-          name: Create new Heroku app
-          command: heroku apps:create $HEROKU_APP_NAME --stack heroku-18 --addons=jawsdb:kitefin
+          name: heroku maintenance on
+          command: heroku maintenance:on --app ${HEROKU_APP_NAME}
       - run:
           name: Deploy
           command: bundle update mimemagic && git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master && bundle update mimemagic
@@ -79,6 +76,9 @@ jobs:
           command: |
             heroku config:set AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_S3_BUCKET=$AWS_S3_BUCKET
             heroku run bin/rails db:migrate
+      - run:
+          name: heroku maintenance off
+          command: heroku maintenance:off --app ${HEROKU_APP_NAME}
 
 orbs:
   build-tools: circleci/build-tools@2.6.3
