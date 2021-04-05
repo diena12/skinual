@@ -15,7 +15,7 @@
 * フロントエンド(JavaScript, jQuery)
 * 開発環境(Docker)
 * 本番環境(Heroku)
-* データベース(開発環境: MySQL 5.7,本番環境: JawsDB)
+* データベース(開発環境: MySQL 5.7, 本番環境: JawsDB)
 
 ## 使用機能・技術
 * CI/CD(CircleCI, Heroku Pipeline)
