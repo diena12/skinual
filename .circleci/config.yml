@@ -67,7 +67,7 @@ jobs:
       - jq/install
       - run:
           name: Define Heroku app name to create
-          command: echo "export HEROKU_APP_NAME=skinual-beauty" >> $BASH_ENV
+          command: echo "export HEROKU_APP_NAME=skinual-beautiful" >> $BASH_ENV
       - run:
           name: Create fresh Heroku app
           command: heroku apps:create $HEROKU_APP_NAME --stack heroku-18 --addons=jawsdb:kitefin
