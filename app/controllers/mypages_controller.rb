@@ -25,6 +25,6 @@ class MypagesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :skin_type, :profile, :image,)
+    params.require(:user).permit(:name, :skin_type, :profile, :image)
   end
 end
